@@ -1,4 +1,5 @@
 import random
+import ItemsList
 
 
 class Enemy:
@@ -68,16 +69,17 @@ class Goblin(Enemy):
     defence = 10
     exp = 10
 
-    def drop_item(self):
+    @staticmethod
+    def drop_item():
 
         # selects object from item list and returns it
 
         item_choice = random.randint(0, 1)      # 2 items to choose from
 
         if item_choice == 0:
-            return self.items[0]    # potion
+            return ItemsList.potion    # potion
         elif item_choice == 1:
-            return self.items[1]    # wooden shield
+            return ItemsList.ws    # wooden shield
 
 
 class Hobgoblin(Enemy):
@@ -88,18 +90,19 @@ class Hobgoblin(Enemy):
     defence = 15
     exp = 15
 
-    def drop_item(self):
+    @staticmethod
+    def drop_item():
 
         # selects object from item list and returns it
 
         item_choice = random.randint(0, 2)    # 3 items to choose from
 
         if item_choice == 0:
-            return self.items[0]    # potion
+            return ItemsList.potion    # potion
         elif item_choice == 1:
-            return self.items[2]    # iron sword
+            return ItemsList.irons    # iron sword
         elif item_choice == 2:
-            return self.items[3]    # iron shield
+            return ItemsList.ss   # scale shield
 
 
 class Bugbear(Enemy):
@@ -110,8 +113,10 @@ class Bugbear(Enemy):
     defence = 20
     exp = 20
 
-    def drop_item(self):
+    @staticmethod
+    def drop_item():
 
         # no need to choose....just returns treasure key
+        # if true treasure key is returned
 
-        return self.items[4]
+        return True
