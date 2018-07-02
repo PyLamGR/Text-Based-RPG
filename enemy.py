@@ -14,9 +14,8 @@ class Enemy:
     exp = 0
 
     # maybe make it a dictionary?
-    # size = 5 ?
     items = ["potion", "wooden shield", "iron sword", "iron shield", "treasure room key"]
-    # need items objects (OBJECT LIST)       # give temporary strings
+    # maybe not needed
 
     def __init__(self, x, y):
         self.loc_x = x
@@ -59,6 +58,11 @@ class Enemy:
     def defend(self):
 
         self.defence += 1
+
+    def get_attacked(self, player_damage):
+        damage = player_damage - self.defence
+        self.health -= damage
+        return
 
 
 class Goblin(Enemy):
