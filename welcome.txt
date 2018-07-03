@@ -1,0 +1,7 @@
+=== PyLam THE GAME ===
+
+1. New Game
+2. Load Game
+3. Help
+4. About
+5. Quit
