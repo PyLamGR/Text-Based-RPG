@@ -13,20 +13,17 @@ class Enemy:
     defence = 0
     exp = 0
 
-    # maybe make it a dictionary?
-    items = ["potion", "wooden shield", "iron sword", "iron shield", "treasure room key"]
-    # maybe not needed
-
-    def __init__(self, x, y):
-        self.loc_x = x
-        self.loc_y = y
-        self.alive = True
-
     def battle_player(self, x, y):
         # takes x, y parameters from player's location
 
-        if self.loc_x == x and self.loc_y == y:
+        if self.loc_x <= x + 2 or self.loc_x >= x - 2 and self.loc_y <= y + 2 or self.loc_y >= y - 2:
             return True
+
+    def attack_first(self, pl_speed):
+        if self.speed > pl_speed:
+            return True
+        else:
+            return False
 
     def die(self):
 
@@ -66,12 +63,23 @@ class Enemy:
 
 
 class Goblin(Enemy):
+    # stats = [speed, attack, defence, health]
+    stats = [40, 20, 10, 15]
 
-    health = 15
-    speed = 40
-    attack = 20
-    defence = 10
-    exp = 10
+    def __init__(self, x, y):
+        self.health = 15
+        self.speed = 40
+        self.attack = 20
+        self.defence = 10
+        self.loc_x = x
+        self.loc_y = y
+        self.alive = True
+
+    def battle_player(self, x, y):
+        # takes x, y parameters from player's location
+
+        if self.loc_x <= x + 1 or self.loc_x >= x - 1 and self.loc_y <= y + 1 or self.loc_y >= y - 1:
+            return True
 
     @staticmethod
     def drop_item():
@@ -85,14 +93,24 @@ class Goblin(Enemy):
         elif item_choice == 1:
             return ItemsList.ws    # wooden shield
 
+    def give_xp(self):
+        if self.die() is True:
+            self.exp = 10
+            return self.exp
+
 
 class Hobgoblin(Enemy):
+    # stats = [speed, attack, defence, health]
+    stats = [30, 22, 15, 20]
 
-    health = 20
-    speed = 30
-    attack = 22
-    defence = 15
-    exp = 15
+    def __init__(self, x, y):
+        self.health = 20
+        self.speed = 30
+        self.attack = 22
+        self.defence = 15
+        self.loc_x = x
+        self.loc_y = y
+        self.alive = True
 
     @staticmethod
     def drop_item():
@@ -108,14 +126,24 @@ class Hobgoblin(Enemy):
         elif item_choice == 2:
             return ItemsList.ss   # scale shield
 
+    def give_xp(self):
+        if self.die() is True:
+            self.exp = 15
+            return self.exp
+
 
 class Bugbear(Enemy):
+    # stats = [speed, attack, defence, health]
+    stats = [10, 35, 20, 50]
 
-    health = 50
-    speed = 10
-    attack = 35
-    defence = 20
-    exp = 20
+    def __init__(self, x, y):
+        self.health = 50
+        self.speed = 10
+        self.attack = 35
+        self.defence = 20
+        self.loc_x = x
+        self.loc_y = y
+        self.alive = True
 
     @staticmethod
     def drop_item():
@@ -124,3 +152,8 @@ class Bugbear(Enemy):
         # if true treasure key is returned
 
         return True
+
+    def give_xp(self):
+        if self.die() is True:
+            self.exp = 20
+            return self.exp
