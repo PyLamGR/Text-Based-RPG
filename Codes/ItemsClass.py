@@ -1,6 +1,7 @@
 """
 -- detailed doc
 -- check stat changes and prints
+...
 """
 
 
@@ -19,9 +20,9 @@ class Items:
             print("hp = " + curr_hp + " --> " + "hp = " + max_hp)
         if self.name == "Medicinal Herb":
             print("hp = " + curr_hp + " --> " + "hp = " + (curr_hp + 2))
-        if self.name == "Holy Water":
-            print("dmg = " + max_dmg + " --> " + "dmg = " + (max_dmg + 2))
-            print("Works only for a round")
+        # if self.name == "Holy Water":
+        #     print("dmg = " + max_dmg + " --> " + "dmg = " + (max_dmg + 2))
+        #     print("Works only for a round")
         if self.name == "Copper Sword":
             print("dmg = " + max_dmg + " --> " + "dmg = " + (max_dmg + 3))
         if self.name == "Wooden Shield":
@@ -55,8 +56,8 @@ class Items:
             return max_hp
         if self.name == "Medicinal Herb":
             return curr_hp + 2
-        if self.name == "Holy Water":
-            return max_dmg * 2
+        # if self.name == "Holy Water":
+        #     return max_dmg * 2
         if self.name == "Copper Sword":
             return max_dmg + 3
         if self.name == "Wooden Shield":
@@ -89,21 +90,23 @@ class Items:
         if race == "Human":
             if self.name == "Old Axe" or self.name == "Hunter's Axe" or self.name == "Grand Axe":
                 print("A Human cannot equip " + self.name)
-                return
+                return False
 
         if race == "Dwarf":
             if self.name == "Copper Sword" or self.name == "Iron Sword" or self.name == "Standard Bow" \
                     or self.name == "Long Bow":
                 print("Dwarves cannot equip " + self.name)
-                return
+                return False
 
         if race == "Elf":
             if self.name == "Old Axe" or self.name == "Hunter's Axe" or self.name == "Grand Axe":
                 print("Elves cannot equip " + self.name)
-                return
+                return False
 
         if race == "Orc":
             if self.name == "Copper Sword" or self.name == "Iron Sword" or self.name == "Standard Bow" \
                     or self.name == "Long Bow":
                 print("Orcs cannot equip " + self.name)
-                return
+                return False
+
+        return True
