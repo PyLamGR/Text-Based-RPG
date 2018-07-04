@@ -108,3 +108,5 @@ class Items:
                     or self.name == "Long Bow":
                 print("Orcs cannot equip " + self.name)
                 return False
+
+        return True
