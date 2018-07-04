@@ -90,21 +90,21 @@ class Items:
         if race == "Human":
             if self.name == "Old Axe" or self.name == "Hunter's Axe" or self.name == "Grand Axe":
                 print("A Human cannot equip " + self.name)
-                return
+                return False
 
         if race == "Dwarf":
             if self.name == "Copper Sword" or self.name == "Iron Sword" or self.name == "Standard Bow" \
                     or self.name == "Long Bow":
                 print("Dwarves cannot equip " + self.name)
-                return
+                return False
 
         if race == "Elf":
             if self.name == "Old Axe" or self.name == "Hunter's Axe" or self.name == "Grand Axe":
                 print("Elves cannot equip " + self.name)
-                return
+                return False
 
         if race == "Orc":
             if self.name == "Copper Sword" or self.name == "Iron Sword" or self.name == "Standard Bow" \
                     or self.name == "Long Bow":
                 print("Orcs cannot equip " + self.name)
-                return
+                return False
