@@ -4,12 +4,20 @@ import ItemsList
 
 class Enemy:
 
+    loc_x = 0
+    loc_y = 0
     alive = True
     health = 0
     speed = 0
     attack = 0
     defence = 0
     exp = 0
+
+    def battle_player(self, x, y):
+        # takes x, y parameters from player's location
+
+        if self.loc_x <= x + 2 or self.loc_x >= x - 2 and self.loc_y <= y + 2 or self.loc_y >= y - 2:
+            return True
 
     def attack_first(self, pl_speed):
         if self.speed > pl_speed:
@@ -58,12 +66,20 @@ class Goblin(Enemy):
     # stats = [speed, attack, defence, health]
     stats = [40, 20, 10, 15]
 
-    def __init__(self):
+    def __init__(self, x, y):
         self.health = 15
         self.speed = 40
         self.attack = 20
         self.defence = 10
+        self.loc_x = x
+        self.loc_y = y
         self.alive = True
+
+    def battle_player(self, x, y):
+        # takes x, y parameters from player's location
+
+        if self.loc_x <= x + 1 or self.loc_x >= x - 1 and self.loc_y <= y + 1 or self.loc_y >= y - 1:
+            return True
 
     @staticmethod
     def drop_item():
@@ -87,11 +103,13 @@ class Hobgoblin(Enemy):
     # stats = [speed, attack, defence, health]
     stats = [30, 22, 15, 20]
 
-    def __init__(self):
+    def __init__(self, x, y):
         self.health = 20
         self.speed = 30
         self.attack = 22
         self.defence = 15
+        self.loc_x = x
+        self.loc_y = y
         self.alive = True
 
     @staticmethod
@@ -118,11 +136,13 @@ class Bugbear(Enemy):
     # stats = [speed, attack, defence, health]
     stats = [10, 35, 20, 50]
 
-    def __init__(self):
+    def __init__(self, x, y):
         self.health = 50
         self.speed = 10
         self.attack = 35
         self.defence = 20
+        self.loc_x = x
+        self.loc_y = y
         self.alive = True
 
     @staticmethod
