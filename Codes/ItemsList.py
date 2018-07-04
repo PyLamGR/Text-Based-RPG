@@ -3,7 +3,7 @@ from ItemsClass import Items
 potion = Items("Potion")
 recov = Items("Recovery")
 medh = Items("Medicinal Herb")
-hw = Items("Holy Water")
+# hw = Items("Holy Water")
 cs = Items("Copper Sword")
 ws = Items("Wooden Shield")
 oa = Items("Old Axe")
