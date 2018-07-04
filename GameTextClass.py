@@ -9,6 +9,11 @@ import os
 
 
 def save():
+    if not os.path.exists("save_data"):
+        os.mkdir("save_data", 0o777)
+    os.chdir("D:\\Text-Based-RPG\\save_data")
+    fd = open("save", "wb")
+    fd.write()
     print("saving")
 
 
@@ -39,5 +44,14 @@ class GameText:
         return len(body)
 
 
+class Story(GameText):
+    def epic_print(self):
+        with open(self.file_name, "r") as fd:
+            for line in fd:
+                time.sleep(1)
+                print(line.replace("\n", ""))
+
+
 if __name__ == "__main__":
-    new = GameText("welcome.txt")
+    new = Story("welcome.txt")
+    new.epic_print()
