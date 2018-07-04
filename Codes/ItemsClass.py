@@ -20,9 +20,9 @@ class Items:
             print("hp = " + curr_hp + " --> " + "hp = " + max_hp)
         if self.name == "Medicinal Herb":
             print("hp = " + curr_hp + " --> " + "hp = " + (curr_hp + 2))
-        if self.name == "Holy Water":
-            print("dmg = " + max_dmg + " --> " + "dmg = " + (max_dmg + 2))
-            print("Works only for a round")
+        # if self.name == "Holy Water":
+        #     print("dmg = " + max_dmg + " --> " + "dmg = " + (max_dmg + 2))
+        #     print("Works only for a round")
         if self.name == "Copper Sword":
             print("dmg = " + max_dmg + " --> " + "dmg = " + (max_dmg + 3))
         if self.name == "Wooden Shield":
@@ -56,8 +56,8 @@ class Items:
             return max_hp
         if self.name == "Medicinal Herb":
             return curr_hp + 2
-        if self.name == "Holy Water":
-            return max_dmg * 2
+        # if self.name == "Holy Water":
+        #     return max_dmg * 2
         if self.name == "Copper Sword":
             return max_dmg + 3
         if self.name == "Wooden Shield":
