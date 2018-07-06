@@ -71,15 +71,15 @@ class Items:
         if self.name == "Iron Sword":
             return max_dmg + 8
         if self.name == "Leather Shield":
-            return max_def + 5 and speed - 1
+            return [max_def + 5, speed - 1]
         if self.name == "Grand Axe":
-            return max_dmg + 10 and speed - 4
+            return [max_dmg + 10, speed - 4]
         if self.name == "Standard Bow":
             return max_dmg + 3
         if self.name == "Long Bow":
             return max_dmg + 6
         if self.name == "Scale Shield":
-            return max_def + 10 and speed - 2
+            return [max_def + 10, speed - 2]
 
     def item_wielding_ability(self, race, curr_hp, max_hp):
         if self.name == "Potion" or self.name == "Recovery" or self.name == "Medicinal Herb":
