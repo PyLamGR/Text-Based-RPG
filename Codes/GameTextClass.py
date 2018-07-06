@@ -22,6 +22,9 @@ def save():
 
 def load():
     print("Loading...")
+    os.chdir("D:\\Text-Based-RPG\\save_data")
+    with open("save", "r") as fd:
+        show(fd.read())
 
 
 class GameText:
@@ -52,6 +55,24 @@ class Story(GameText):
                 print(line.replace("\n", ""))
 
 
+class Dialogue(GameText):
+    def __init__(self, file_name, actor):
+        super(Dialogue, self).__init__(file_name)
+        self.actor = actor
+
+    def show_whole(self):
+        with open(self.file_name, "r") as fd:
+            print(self.actor+" : "+fd.read())
+
+
+class Message(GameText):
+    def __init__(self, file_name, event):
+        super(Message, self).__init__(file_name)
+        self.event = event
+    print("Check on event")
+    print("possible events: door, wall, room, enemy!")
+
+
 if __name__ == "__main__":
-    new = Story("welcome.txt")
+    new = Story("intro.txt")
     new.epic_print()
