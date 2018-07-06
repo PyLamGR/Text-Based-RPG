@@ -14,7 +14,7 @@ N/A
 
 -   Georgios Kranas : Programer [(github)](https://github.com/PlebeianDev)
 -   Aris Karabelas Timotievits : Programer [(github)](https://github.com/Act862)
--   Gesthimani Evagglidou : Programer [(github)](https://github.com/Gefsi)
+-   Gesthimani Evaggelidou : Programer [(github)](https://github.com/Gefsi)
 -   Sotirios Sapakos : Programer [(github)](https://github.com/SotirisSapakos)
 - Taxiarchis Kouskouras [(github)](https://github.com/TheNotoriousCS)
 - Nikos Grigoropoulos [(github)](https://github.com/Iznogohul)
