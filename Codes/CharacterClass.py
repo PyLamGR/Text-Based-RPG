@@ -24,6 +24,12 @@ class Character:
     def set_y(self,value):
         self.y = value
 
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
     def use_healing_item(self,items_name):
         for item in self.usable_items:
             if item.name ==  items_name:

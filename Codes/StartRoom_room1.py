@@ -2,6 +2,9 @@ from Helpers.Door import Door
 from Helpers.enemy import Goblin    # only goblins are in room1
 from Helpers.Barrier import Barrier
 from rooms.room1.subroom1 import subroom1Class
+from Helpers.ItemsClass import Items
+from Helpers.CharacterClass import Human, Elf
+from Helpers.PlayerHelperClass import PlayerHelperRace
 
 """ @Author: Sotiris Sapakos """
 
@@ -26,14 +29,21 @@ height = 21
 
 class room1:
 
-    def __init__(self):
+    def __init__(self, race):
+
+        if race == "Human":
+            self.player = Human()
+        elif race == "Elf":
+            self.player = Elf()
+
+        self.player.set_x(int(width / 2))
+        self.player.set_y(0)
+
         self.room1Table = [[]]
-        # player position variables
-        self.playerPositionX = int(width / 2)
-        self.playerPositionY = 0
         self.createRoom(width, height)
 
-        self.baseKit = []
+        self.playerPositionX = self.player.get_x()
+        self.playerPositionY = self.player.get_y()
 
     def createRoom(self, width, height):
         # init game table as 2D matrix (is a simple list)
@@ -45,7 +55,7 @@ class room1:
                 self.room1Table[i][j] = " "
 
         # place player in room (and other components)
-        self.placePlayerInTable(self.playerPositionX, self.playerPositionY)
+        self.placePlayerInTable(self.player.get_x(), self.player.get_y())
         self.placeDoors()
         self.placeEnemies()
         self.placeBarriersNearDoor(self.door3)
@@ -123,7 +133,9 @@ class room1:
                 # especially to subroom1
                 print("Go especially to subroom1")
                 subroom1 = subroom1Class.subroom1()
-                print(self.baseKit)
+                for i in self.player.currently_equipped_weapons:
+                    pass
+
             else:
                 # especially to subroom2
                 print("Go especially to subroom2")
@@ -133,6 +145,7 @@ class room1:
             # go to next room
             print("go into the other main room")
             pass
+
     def booleanCheckAboutDoors(self, X, Y):
         if self.door1.checkEntry(X, Y) or self.door2.checkEntry(X, Y) or self.door3.checkEntry(X, Y):
             return True
