@@ -20,11 +20,12 @@ def save():
 # the load function takes a save file and loads its contents
 
 
-def load():
+def load(file_name):
     print("Loading...")
     os.chdir("D:\\Text-Based-RPG\\save_data")
-    with open("save", "r") as fd:
-        show(fd.read())
+    with open(file_name, "r") as fd:
+        data = fd.read();
+    return data
 
 
 class GameText:
