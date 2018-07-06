@@ -62,7 +62,7 @@ class Enemy:
         damage = player_damage - self.defence
 		
         self.health -= max(damage, 0)
-        return
+        return max(damage, 0)
 
 
 class Goblin(Enemy):
