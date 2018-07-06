@@ -53,7 +53,12 @@ class Combat:
                     curr_villain_def = True
                 plays_now = 2
             if plays_now == 2:
-                'make the characters combat menu'
+
+                """
+                make the characters combat menu, maybe i need an inf loop so we can have the go back option
+                from items list
+                """
+
                 print("Your turn...")
                 print("1. Attack")
                 print("2. Defend")
@@ -78,4 +83,5 @@ class Combat:
                     for i in range(len(character_curr_item_list)):
                         print(i + character_curr_item_list[i])
                     item = int(input("Select one of the above"))
+
                     'waiting for characters function for applying items'
