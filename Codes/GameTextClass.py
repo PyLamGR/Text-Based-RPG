@@ -14,7 +14,7 @@ import pickle
 """
 
 
-def save(element):
+def save(player):
     """
         General algorithm: check if file already exists, if not create the folder.
         After you create the folder, enter this folder, and save the class instance
@@ -25,7 +25,7 @@ def save(element):
         os.mkdir("D:\\Text-Based-RPG\\Save_Files", 0o777)
     with open("D:\\Text-Based-RPG\\Save_Files\\save.bin", 'wb') as fd:
         print("Saving your Process...")
-        pickle.Pickler(fd, 0).dump(element)
+        pickle.Pickler(fd, 0).dump(player)
         print("Save complete!")
 
 
@@ -39,6 +39,7 @@ def load():
         with open("D:\\Text-Based-RPG\\Save_Files\\save.bin", 'rb') as fd:
             print("Now Loading...\('_')/")
             b = pickle.Unpickler(fd).load()
+            print("Loading complete!")
             return b
 
 
