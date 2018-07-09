@@ -15,26 +15,33 @@ class Character:
         self.usable_items = []
         self.x = 0
         self.y = 0
+        self.has_key = False
         # A list with the weapon and armor our character holds
         self.currently_equipped_weapons = []
 
-    def set_x(self,value):
+    def _set_key(self, value):
+        self.has_key = value
+
+    def _get_key(self):
+        return self.has_key
+
+    def _set_x(self, value):
         self.x = value
 
-    def set_y(self,value):
+    def _set_y(self,value):
         self.y = value
 
-    def get_x(self):
-        return self.x
-
-    def get_y(self):
+    def _get_y(self):
         return self.y
+
+    def _get_x(self):
+        return self.x
 
     def use_healing_item(self,items_name):
         for item in self.usable_items:
-            if item.name ==  items_name:
+            if item.name == items_name:
                 index = self.usable_items.index(item)
-                self.change_stats =(self.usable_items.pop(self.usable_items.index(index)))
+                self.change_stats = (self.usable_items.pop(self.usable_items.index(index)))
                 break
             else:
                 continue
