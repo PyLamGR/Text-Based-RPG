@@ -4,15 +4,16 @@ import ItemsList
 
 class Enemy:
 
-    loc_x = 0
-    loc_y = 0
-    alive = True
-    health = 0
-    speed = 0
-    attack = 0
-    defence = 0
-    exp = 0
-
+    def __init__(self, x, y):
+        self.health = 15
+        self.speed = 40
+        self.attack = 20
+        self.defence = 10
+        self.loc_x = x
+        self.loc_y = y
+        self.alive = True
+		self.name = "Goblin"
+		
     def battle_player(self, x, y):
         # takes x, y parameters from player's location
 
@@ -47,9 +48,10 @@ class Enemy:
     def attack_player(self, char_health, char_def):
 
         hp_loss = self.attack - char_def
-
-        char_health -= hp_loss
-
+		
+		
+        char_health -= max(hp_loss, 0)
+		
         return char_health
 
     def defend(self):
@@ -58,22 +60,15 @@ class Enemy:
 
     def get_attacked(self, player_damage):
         damage = player_damage - self.defence
-        self.health -= damage
-        return
+		
+        self.health -= max(damage, 0)
+        return max(damage, 0)
 
 
 class Goblin(Enemy):
     # stats = [speed, attack, defence, health]
     stats = [40, 20, 10, 15]
 
-    def __init__(self, x, y):
-        self.health = 15
-        self.speed = 40
-        self.attack = 20
-        self.defence = 10
-        self.loc_x = x
-        self.loc_y = y
-        self.alive = True
 
     def battle_player(self, x, y):
         # takes x, y parameters from player's location
@@ -111,6 +106,7 @@ class Hobgoblin(Enemy):
         self.loc_x = x
         self.loc_y = y
         self.alive = True
+		self.name = "Hobgoblin"
 
     @staticmethod
     def drop_item():
@@ -144,6 +140,7 @@ class Bugbear(Enemy):
         self.loc_x = x
         self.loc_y = y
         self.alive = True
+		self.name = "Bugbear"
 
     @staticmethod
     def drop_item():
