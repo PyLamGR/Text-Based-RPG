@@ -1,9 +1,8 @@
 from ItemsClass import Items
 
-
 class Character:
     """Character master class"""
-    def __init__(self, base_speed, base_attack, base_defense, base_hp ,race):
+    def __init__(self, base_speed, base_attack, base_defense, base_hp, race):
         """current is a variable that holds the current attribute e.g. current_speed = base_speed + item_given_speed"""
         self.current_speed = self.base_speed = base_speed
         self.current_attack = self.base_attack = base_attack
@@ -135,8 +134,6 @@ class Elf(Character):
         self.usable_items.append(m2)
         self.change_stats(sb)
         self.change_stats(ws)
-
-
 
 
 
