@@ -8,7 +8,6 @@ N/A
 ## [](https://github.com/PyLamGR/Logic-Design-Tools/blob/master/README.md#built-with)[](https://github.com/PyLamGR/password-generator/blob/master/README.md#built-with)Built with
 
 -   [Python](https://www.python.org "python.org")
--   [Pycharm](https://www.jetbrains.com/pycharm "jetbrains.org")
 
 ## [](https://github.com/PyLamGR/Logic-Design-Tools/blob/master/README.md#authors)[](https://github.com/PyLamGR/password-generator/blob/master/README.md#authors)Authors
 
