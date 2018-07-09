@@ -16,9 +16,9 @@ N/A
 -   Aris Karabelas Timotievits : Programer [(github)](https://github.com/Act862)
 -   Gesthimani Evaggelidou : Programer [(github)](https://github.com/Gefsi)
 -   Sotirios Sapakos : Programer [(github)](https://github.com/SotirisSapakos)
-- Taxiarchis Kouskouras [(github)](https://github.com/TheNotoriousCS)
-- Nikos Grigoropoulos [(github)](https://github.com/Iznogohul)
-- Pavlos Aplakidis [(github)](https://github.com/pAplakidis)
+- Taxiarchis Kouskouras : Programer [(github)](https://github.com/TheNotoriousCS)
+- Nikos Grigoropoulos : Programer [(github)](https://github.com/Iznogohul)
+- Pavlos Aplakidis : Programer [(github)](https://github.com/pAplakidis)
 
 ## [](https://github.com/PyLamGR/Logic-Design-Tools/blob/master/README.md#license)[](https://github.com/PyLamGR/password-generator/blob/master/README.md#license)License
 
