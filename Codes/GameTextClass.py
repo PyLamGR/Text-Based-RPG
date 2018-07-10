@@ -2,29 +2,44 @@
 
 import time
 import os
+import pickle
 
-# functions for the text elements of the game
+"""
+    こんばんわ!
+    This is a python functionality elements collection!!
+    GameTextClass: describes the texts that appear in the game.
+    save & load: manage the processes save in a file and the reload in the game.
+    
+    For the save functions, the pickle module was used. Have fun checking the code.
+"""
 
-# save function takes an object and writes it in a binary file
 
+def save(element):
+    """
+        General algorithm: check if file already exists, if not create the folder.
+        After you create the folder, enter this folder, and save the class instance
+        in the file.
+    """
 
-def save():
-    if not os.path.exists("save_data"):
-        os.mkdir("save_data", 0o777)
-    os.chdir("D:\\Text-Based-RPG\\save_data")
-    fd = open("save", "wb")
-    fd.write()
-    print("saving")
+    if not os.path.exists("D:\\Text-Based-RPG\\Save_Files"):
+        os.mkdir("D:\\Text-Based-RPG\\Save_Files", 0o777)
+    with open("D:\\Text-Based-RPG\\Save_Files\\save.bin", 'wb') as fd:
+        print("Saving your Process...")
+        pickle.Pickler(fd, 0).dump(element)
+        print("Save complete!")
 
 
 # the load function takes a save file and loads its contents
 
 
 def load():
-    print("Loading...")
-    os.chdir("D:\\Text-Based-RPG\\save_data")
-    with open("save", "r") as fd:
-        show(fd.read())
+    if not os.path.exists("D:\\Text-Based-RPG\\Save_Files"):
+        print("No previous save data to be loaded!")
+    else:
+        with open("D:\\Text-Based-RPG\\Save_Files\\save.bin", 'rb') as fd:
+            print("Now Loading...\('_')/")
+            b = pickle.Unpickler(fd).load()
+            return b
 
 
 class GameText:
@@ -69,8 +84,8 @@ class Message(GameText):
     def __init__(self, file_name, event):
         super(Message, self).__init__(file_name)
         self.event = event
-    print("Check on event")
-    print("possible events: door, wall, room, enemy!")
+        print("Check on event")
+        print("possible events: door, wall, room, enemy!")
 
 
 if __name__ == "__main__":

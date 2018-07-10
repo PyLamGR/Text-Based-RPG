@@ -12,7 +12,7 @@ class Enemy:
         self.loc_x = x
         self.loc_y = y
         self.alive = True
-		self.name = "Goblin"
+        self.name = "Goblin"
 		
     def battle_player(self, x, y):
         # takes x, y parameters from player's location
@@ -106,7 +106,7 @@ class Hobgoblin(Enemy):
         self.loc_x = x
         self.loc_y = y
         self.alive = True
-		self.name = "Hobgoblin"
+        self.name = "Hobgoblin"
 
     @staticmethod
     def drop_item():
@@ -140,7 +140,7 @@ class Bugbear(Enemy):
         self.loc_x = x
         self.loc_y = y
         self.alive = True
-		self.name = "Bugbear"
+        self.name = "Bugbear"
 
     @staticmethod
     def drop_item():
