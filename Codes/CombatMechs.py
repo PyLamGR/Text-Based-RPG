@@ -2,10 +2,6 @@ from random import randint
 
 
 class Combat:
-    """
-    @gk
-    The class simulates a basic combat
-    """
 
     def __init__(self, option):
         self.option = option

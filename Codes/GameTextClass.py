@@ -1,11 +1,6 @@
-""" Authored by: Aristos Karampelas Timotijevic"""
-
 import time
 import os
-
-# functions for the text elements of the game
-
-# save function takes an object and writes it in a binary file
+from .Game import PATH
 
 
 def save():
@@ -14,14 +9,9 @@ def save():
     os.chdir("D:\\Text-Based-RPG\\save_data")
     fd = open("save", "wb")
     fd.write()
-    print("saving")
-
-
-# the load function takes a save file and loads its contents
 
 
 def load(file_name):
-    print("Loading...")
     os.chdir("D:\\Text-Based-RPG\\save_data")
     with open(file_name, "r") as fd:
         data = fd.read();
