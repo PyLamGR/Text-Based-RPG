@@ -14,31 +14,42 @@ import pickle
 """
 
 
-def save(element):
+def save(file_name, player):
     """
-        General algorithm: check if file already exists, if not create the folder.
-        After you create the folder, enter this folder, and save the class instance
-        in the file.
+        Explanation: Ask the user for a file name and also pass the player object in the function.
+        The the code runs as such: It checks if the save_files dir already exists, and if it non-existent it
+        creates it. Then it opens a file_desc for the file name given by the user.
     """
 
     if not os.path.exists("D:\\Text-Based-RPG\\Save_Files"):
         os.mkdir("D:\\Text-Based-RPG\\Save_Files", 0o777)
-    with open("D:\\Text-Based-RPG\\Save_Files\\save.bin", 'wb') as fd:
+    with open("D:\\Text-Based-RPG\\Save_Files\\"+file_name+".bin", 'wb') as fd:
         print("Saving your Process...")
-        pickle.Pickler(fd, 0).dump(element)
+        pickle.Pickler(fd, 0).dump(player)
         print("Save complete!")
 
 
 # the load function takes a save file and loads its contents
 
 
-def load():
+def load(file_name):
+    """
+        Explanation: This function takes a file_name as argument. The process is compromised by some additional checks.
+        If the directory does not exist, then it will inform that a save must be done.
+        If the directory does exist, but the demanded save file is non-existent, then it will inform the user
+        accordingly. If all the upper checks are ok, then the save file will be loaded.
+    """
     if not os.path.exists("D:\\Text-Based-RPG\\Save_Files"):
         print("No previous save data to be loaded!")
+        return -1
+    elif not os.path.exists("D:\\Text-Based-RPG\\Save_Files\\"+file_name+".bin"):
+        print("File not Found!")
+        return -1
     else:
-        with open("D:\\Text-Based-RPG\\Save_Files\\save.bin", 'rb') as fd:
+        with open("D:\\Text-Based-RPG\\Save_Files\\"+file_name+".bin", 'rb') as fd:
             print("Now Loading...\('_')/")
             b = pickle.Unpickler(fd).load()
+            print("Loading complete!")
             return b
 
 
