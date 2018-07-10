@@ -22,11 +22,11 @@ class Room:
         Print the room as string for the user to see.
         """
         helper_line = []
-        for i in range(width + 2):
+        for i in range(self.width + 2):
             helper_line.append("-")
 
         print(" ".join(helper_line))
-        for i in range(width):
+        for i in range(self.width):
             print("|", " ".join(self.room_table[i]), "|")
 
         print(" ".join(helper_line))
@@ -44,3 +44,7 @@ class Room:
         """
         for enemy in self.enemies:
             self.room_table[enemy.position.x][enemy.position.y] = "O"  # TODO: place correct letters
+
+
+class Room1(Room):
+    pass

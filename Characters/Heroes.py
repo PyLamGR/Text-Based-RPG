@@ -66,6 +66,7 @@ class Human(GenericHero):
         self.equipped_items[1] = Items.WOODEN_SHIELD
         self.calculate_stats()
 
+
 class Elf(GenericHero):
     name = "Elf"
 

@@ -7,6 +7,7 @@ from helper import Position
 
 class GenericEnemy(Character):
     name = "Generic Enemy"
+    map_presence = "G"
     item_drops = []
     experience_points = 0
 
@@ -35,6 +36,7 @@ class GenericEnemy(Character):
 
 class Goblin(GenericEnemy):
     name = "Goblin"
+    map_presence = "O"
     item_drops = [
         Items.HEALTH_POT,
         Items.WOODEN_SHIELD
@@ -47,6 +49,7 @@ class Goblin(GenericEnemy):
 
 class Hobgoblin(GenericEnemy):
     name = "Hobgoblin"
+    map_presence = "H"
     item_drops = [
         Items.HEALTH_POT,
         Items.IRON_SWORD,
@@ -60,6 +63,7 @@ class Hobgoblin(GenericEnemy):
 
 class Bugbear(GenericEnemy):
     name = "Bugbear"
+    map_presence = "B"
     item_drops = [
         Items.HEALTH_POT,
         Items.IRON_SWORD,
